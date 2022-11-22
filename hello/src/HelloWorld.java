@@ -1,9 +1,6 @@
 public class HelloWorld {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         String str = "Native Image is awesome";
         String reversed = reverseString(str);
         System.out.println("The reversed string is: " + reversed);

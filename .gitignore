@@ -6,4 +6,5 @@ helloworld
 helloworld.build_artifacts.txt
 HelloWorld.class
 hello/src/HelloWorld.class
+.DS_Store
 
