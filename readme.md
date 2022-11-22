@@ -1,27 +1,47 @@
 graalvm
 
+## 操作系统
+
+MacOS 13.0.1 (22A400)
+
 ## install graalvm
-* download java11-darwin-amd64-22.0.0.2.tar.gz
-* native-image-installable-svm-java11-darwin-amd64-22.0.0.2.jar
+下载安装文件到 $HOME/Downloads 目录下:
+* graalvm-ce-java11-darwin-amd64-22.3.0.tar.gz
+* native-image-installable-svm-java11-darwin-amd64-22.3.0.jar
 
-安装 java11-darwin-amd64-22.0.0.2.tar.gz
 ```
-cd /opt/local
-tar -Zvxf java11-darwin-amd64-22.0.0.2.tar.gz
+$ cd $HOME/Downloads
+$ wget https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-22.3.0/graalvm-ce-java11-darwin-amd64-22.3.0.tar.gz
+$ wget https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-22.3.0/native-image-installable-svm-java11-darwin-amd64-22.3.0.jar
 ```
+
+
+安装 graalvm-ce-java11-darwin-amd64-22.3.0.tar.gz
+
+```
+$ cd $HOME/Downloads
+$ tar -zvxf graalvm-ce-java11-darwin-amd64-22.3.0.tar.gz
+$ cp -r  graalvm-ce-java11-22.3.0 /Library/Java/JavaVirtualMachines/
+```
+
 配置环境变量
+
 ```
-cd ~
-vi .bash_profile
-JAVA_HOME=/opt/local/graalvm-ce-java11-22.0.0.2/Contents/Home
-PATH=$JAVA_HOME/bin:$PATH:.
-```
-安装native-image
-```
-gu install -L /opt/local/native-image-installable-svm-java11-darwin-amd64-22.0.0.2.jar
+$ cd ~
+$ vim .bash_profile
+JAVA_HOME=/Library/Java/JavaVirtualMachines/graalvm-ce-java11-22.3.0/Contents/Home
+PATH=$JAVA_HOME/bin:$PATH
+$ source ~/.bash_profile
 ```
 
-编译hello 项目 hellworld
+
+安装native-image
+
+```
+$ gu install -L $HOME/Downloads/native-image-installable-svm-java11-darwin-amd64-22.3.0.jar
+```
+
+编译 hello 项目 hellworld
 ```
 public class HelloWorld {
 
@@ -41,22 +61,18 @@ public class HelloWorld {
     }
 
 }
+
 ```
-javac HelloWorld.java
-native-image HelloWorld
+
 ```
+$ javac HelloWorld.java
+$ native-image HelloWorld
+
 ================================================================================
-GraalVM Native Image: Generating 'helloworld'...
-================================================================================
-[1/7] Initializing...                                           (11.3s @ 0.20GB)
- Version info: 'GraalVM 22.0.0.2 Java 11 CE'
-Produced artifacts:
- /Users/chenliyu/clyhs/java/hello/src/helloworld (executable)
- /Users/chenliyu/clyhs/java/hello/src/helloworld.build_artifacts.txt
-================================================================================
+GraalVM Native Image: Generating 'helloworld' (executable)...
+...
 Finished generating 'helloworld' in 1m 11s.
 
-```
-chenliyudeMacBook-Pro:src chenliyu$ ./helloworld 
+$ ./helloworld 
 The reversed string is: emosewa si egamI evitaN
-
+```

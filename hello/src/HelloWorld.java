@@ -1,14 +1,3 @@
-/**
- * 
- */
-
-
-/**
- * @date Feb 2, 2022 11:51:00 AM
- *
- * @author 大鱼
- *
- */
 public class HelloWorld {
 
 	/**
@@ -25,5 +14,4 @@ public class HelloWorld {
             return str;
         return reverseString(str.substring(1)) + str.charAt(0);
     }
-
 }

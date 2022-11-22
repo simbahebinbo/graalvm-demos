@@ -57,7 +57,7 @@ public class VertxHttpServer {
 			rc.response().end("World");
 		});
 		
-		httpServer.requestHandler(router).listen(8080, asyncResult -> {
+		httpServer.requestHandler(router).listen(8888, asyncResult -> {
 			if (asyncResult.failed()) {
 				System.out.println("start server failed! " + asyncResult.cause());
 			} else {
