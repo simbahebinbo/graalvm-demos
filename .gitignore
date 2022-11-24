@@ -10,7 +10,7 @@ hello/src/HelloWorld.class
 .iml
 */.iml
 */graalvm-demos.iml
-*/netty-svm-httpserver.iml
+*/netty-native-demo.iml
 */springboot-demo.iml
 */vertx-graalvm.iml
 

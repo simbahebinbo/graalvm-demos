@@ -14,7 +14,6 @@
     <name>springboot-demo</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>17</maven.compiler.source>
@@ -22,13 +21,12 @@
         <java.version>17</java.version>
 
         <spring-boot.version>2.7.5</spring-boot.version>
+        <spring-native.version>0.12.0</spring-native.version>
         <lombok.version>1.18.24</lombok.version>
         <junit.jupiter.version>5.9.1</junit.jupiter.version>
         <mockito.version>4.9.0</mockito.version>
         <awaitility.version>4.2.0</awaitility.version>
         <reactor-test.version>3.5.0</reactor-test.version>
-
-        <spring-native.version>0.12.0</spring-native.version>
     </properties>
     <dependencies>
         <dependency>
@@ -152,6 +150,34 @@
         </plugins>
         <pluginManagement>
             <plugins>
+                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>
+                                            org.springframework.experimental
+                                        </groupId>
+                                        <artifactId>
+                                            spring-aot-maven-plugin
+                                        </artifactId>
+                                        <versionRange>
+                                            [0.11.2,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>test-generate</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
