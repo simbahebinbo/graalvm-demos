@@ -12,7 +12,7 @@ mvn clean -Pnative package
 ./target/vertx-graalvm-full
 ```
 
-vertx4.1.0:native-image.properties
+vertx4.2.1:native-image.properties
 
 ```
 Args = --initialize-at-run-time=io.netty.handler.ssl.util.ThreadLocalInsecureRandom,\
