@@ -76,7 +76,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>${maven-assembly-plugin.version}</version>
                 <configuration>
                     <finalName>${project.artifactId}-full</finalName>
                     <descriptorRefs>
@@ -104,7 +104,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>${maven-jar-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>default-jar</id>
@@ -116,7 +116,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <release>17</release>
                 </configuration>
@@ -125,7 +125,7 @@
             <plugin>
                 <groupId>io.reactiverse</groupId>
                 <artifactId>vertx-maven-plugin</artifactId>
-                <version>1.0.22</version>
+                <version>${vertx-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>vmp</id>
@@ -149,7 +149,7 @@
                     <plugin>
                         <groupId>org.graalvm.nativeimage</groupId>
                         <artifactId>native-image-maven-plugin</artifactId>
-                        <version>19.3.0</version>
+                        <version>${native-image-maven-plugin.version}</version>
                         <executions>
                             <execution>
                                 <goals>
