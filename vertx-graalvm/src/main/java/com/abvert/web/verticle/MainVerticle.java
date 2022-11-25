@@ -30,7 +30,7 @@ public class MainVerticle extends AbstractVerticle {
             rc.response().end("World");
         });
 
-        httpServer.requestHandler(router).listen(8080, "127.0.0.1", res -> {
+        httpServer.requestHandler(router).listen(8080, "0.0.0.0", res -> {
             if (res.succeeded()) {
                 System.out.println("start server success!");
                 startPromise.complete();
